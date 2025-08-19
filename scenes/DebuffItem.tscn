@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://w3o8fbueqvah"]
+
+[ext_resource type="Texture2D" uid="uid://eomsvbpy3252" path="res://sprites/fire.png" id="1_sbr3i"]
+[ext_resource type="Script" path="res://scripts/debuff_item.gd" id="1_x8e48"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr6ht"]
+atlas = ExtResource("1_sbr3i")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt3ob"]
+atlas = ExtResource("1_sbr3i")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awj51"]
+atlas = ExtResource("1_sbr3i")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltg2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr6ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt3ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awj51")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ni6"]
+size = Vector2(9, 20)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_x8e48")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ltg2t")
+animation = &"idle"
+frame = 2
+frame_progress = 0.786381
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_34ni6")

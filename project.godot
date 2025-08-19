@@ -1,0 +1,34 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TreeMove"
+run/main_scene="res://scenes/Areas/area_1.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
+TransitionScreen="*res://scenes/AreaFunctionality/transition_screen.tscn"
+
+[display]
+
+window/size/viewport_width=550
+window/size/viewport_height=324
+
+[layer_names]
+
+2d_physics/layer_17="transitions"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
