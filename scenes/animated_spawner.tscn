@@ -185,3 +185,4 @@ script = ExtResource("1_ihoym")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j2lg4")
 animation = &"spawn"
+frame_progress = 0.336149

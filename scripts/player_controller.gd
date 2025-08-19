@@ -23,3 +23,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func apply_slowdown(duration: float, factor: float):
+	var t = get_tree().create_timer(duration)
+	var direction := Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED * factor
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED * factor)
+	print("player in fire collision")
+	t.timeout.connect(_physics_process)

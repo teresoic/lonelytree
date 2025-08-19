@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1f8qoacpyn4b"]
+[gd_scene load_steps=9 format=3 uid="uid://b1f8qoacpyn4b"]
 
 [ext_resource type="Texture2D" uid="uid://dg1ascyovdyg0" path="res://sprites/area2background.png" id="1_hug6q"]
 [ext_resource type="Texture2D" uid="uid://bxtuu8104jvmx" path="res://sprites/tiles_1.png" id="2_r63l0"]
 [ext_resource type="PackedScene" uid="uid://byno0rtwoq5m2" path="res://scenes/Scene1.tscn" id="3_ofx3a"]
 [ext_resource type="PackedScene" uid="uid://4qopfcgma8jp" path="res://scenes/AreaFunctionality/area_exit.tscn" id="4_atltl"]
+[ext_resource type="PackedScene" uid="uid://bkidby32nqkiq" path="res://scenes/animated_spawner.tscn" id="5_wdv87"]
+[ext_resource type="PackedScene" uid="uid://w3o8fbueqvah" path="res://scenes/DebuffItem.tscn" id="6_sng2c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2y1nl"]
 texture = ExtResource("2_r63l0")
@@ -112,3 +114,9 @@ position = Vector2(15, 0)
 
 [node name="AreaExit" parent="." instance=ExtResource("4_atltl")]
 position = Vector2(281, -16)
+
+[node name="AnimatedSpawner" parent="." instance=ExtResource("5_wdv87")]
+position = Vector2(186, -16)
+
+[node name="Area2D" parent="." instance=ExtResource("6_sng2c")]
+position = Vector2(227, -17)
